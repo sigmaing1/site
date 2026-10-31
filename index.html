@@ -1,60 +1,387 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eaf4ff">
-  <title>Sajt je u izradi</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bezbednost i zdravlje na radu - Sigma ing Loznica</title>
+<meta name="description" content="Sigma ing Loznica - Firma koja se bavi bezbednošću i zdravljem na radu. Pružamo usluge procene rizika, obuke zaposlenih, izrade akata i elaborata.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Sigma ing">
+<meta name="theme-color" content="#0b4fe0">
+<meta name="geo.region" content="RS">
+<meta name="geo.placename" content="Loznica">
+<meta http-equiv="content-language" content="sr">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sr_RS">
+<meta property="og:site_name" content="Sigma ing">
+<meta property="og:title" content="Bezbednost i zdravlje na radu - Sigma ing Loznica">
+<meta property="og:description" content="Bezbednost i zdravlje na radu - Sigma ing Loznica">
+<script type="application/ld+json">
+{
+  "@type": "ProfessionalService",
+  "name": "Sigma ing",
+  "description": "Bavimo se bezbednošću i zdravljem na radu, pružamo usluge procene rizika, obuke zaposlenih, izrade akata ",
+  "telephone": "+381642379402",
+  "email": "zivoradmaarkovic72@gmail.com",
+  
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jovana Cvijića 39",
+    "addressLocality": "Loznica",
+    "addressCountry": "RS"
+  },
+  "areaServed": "RS",
+  "knowsAbout": ["Bezbednost i zdravlje na radu", "Procena rizika", "Obuka zaposlenih", "Pravilnik o BZR", "Elaborati"]
+}
+</script>
+<meta name="keywords" content="bezbednost na radu, zdravlje na radu, Sigma ing Loznica, procena rizika, obuka zaposlenih, bzr, elaborati, pravilnik o bzr, evidencije, Loznica, Srbija, sigurnost, zaštita, radno okruženje, zaštita zaposlenih, radna bezbednost, zakonska regulativa, konsultacije, savetovanje, edukacija zaposlenih, analiza rizika">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;background:#fff}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#f1f1f1}
+::-webkit-scrollbar-thumb{background:#2563eb;border-radius:5px}
 
-    body {
-      min-height: 100vh;
-      margin: 0;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      color: #17324d;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(ellipse at 15% 15%, rgba(147, 197, 253, 0.42), transparent 42%),
-        radial-gradient(ellipse at 85% 85%, rgba(186, 230, 253, 0.55), transparent 40%),
-        linear-gradient(135deg, #f8fbff, #eaf4ff);
-    }
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .3s}
+header.scrolled{background:#fff;box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
+.header-content{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+.logo-text{font-size:1.5rem;font-weight:bold;transition:color .3s}
+header:not(.scrolled) .logo-text{color:#fff}
+header.scrolled .logo-text{color:#111827}
+nav{display:flex;gap:2rem}
+nav a{text-decoration:none;transition:color .3s}
+header:not(.scrolled) nav a{color:#fff}
+header.scrolled nav a{color:#374151}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.5rem;width:44px;height:44px;position:relative}
+.mobile-menu-btn span{position:absolute;left:10px;right:10px;height:2px;border-radius:2px;background:currentColor;transition:transform .3s,opacity .3s}
+.mobile-menu-btn span:nth-child(1){top:14px}
+.mobile-menu-btn span:nth-child(2){top:21px}
+.mobile-menu-btn span:nth-child(3){top:28px}
+.mobile-menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mobile-menu-btn.open span:nth-child(2){opacity:0}
+.mobile-menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+header:not(.scrolled) .mobile-menu-btn{color:#fff}
+header.scrolled .mobile-menu-btn{color:#111827}
+.mobile-nav{display:none;padding-bottom:1rem}
+.mobile-nav.active{display:flex;flex-direction:column;gap:.75rem;animation:slideDown .3s ease-out forwards}
+.mobile-nav a{text-decoration:none;color:#374151}
+header:not(.scrolled) .mobile-nav.active{background:#fff;padding:1rem;border-radius:.75rem}
 
-    main {
-      width: min(100%, 620px);
-      padding: clamp(36px, 8vw, 72px) clamp(24px, 7vw, 64px);
-      text-align: center;
-      background: rgba(255, 255, 255, 0.56);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 28px;
-      box-shadow: 0 24px 70px rgba(55, 100, 150, 0.12);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
+.hero-track{position:relative;height:900vh;background:#0b4fe0}
+.hero-stage{position:sticky;top:0;height:100vh;overflow:hidden;background:#0b4fe0}
+.hero-stage::before,.hero-stage::after{content:"";position:absolute;border-radius:50%;filter:blur(80px);opacity:.12}
+.hero-stage::before{top:5rem;left:2.5rem;width:18rem;height:18rem;background:#fff}
+.hero-stage::after{bottom:5rem;right:2.5rem;width:24rem;height:24rem;background:#93c5fd}
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 7vw, 3.5rem);
-      line-height: 1.12;
-      letter-spacing: -0.045em;
-    }
+.sentences{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 1.5rem}
+.sentence{position:absolute;max-width:56rem;text-align:center;color:#fff;font-size:clamp(1.75rem,4.6vw,3.5rem);font-weight:700;line-height:1.2;opacity:0;will-change:opacity,transform}
 
-    p {
-      margin: 18px 0 0;
-      color: #55708b;
-      font-size: clamp(1rem, 3vw, 1.2rem);
-      line-height: 1.6;
-    }
-  </style>
+.window{position:absolute;inset:0;padding:0 1rem;background:radial-gradient(ellipse at 50% 40%,#12307a 0%,#081a47 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;clip-path:inset(50% 50% 50% 50% round 28px);visibility:hidden;will-change:clip-path;pointer-events:none}
+.big-title{color:#fff;font-weight:800;text-align:center;line-height:1.05;font-size:clamp(2.6rem,9.5vw,8.5rem);letter-spacing:-.02em}
+.big-title .line{display:block;white-space:nowrap}
+.big-title .word{display:inline-block;white-space:nowrap}
+.big-title .ch{display:inline-block;transform-origin:50% 80%;will-change:transform,opacity;opacity:0}
+.big-title .sp{display:inline-block;width:.28em}
+
+.section-header{text-align:center;margin-bottom:4rem}
+.section-title{font-size:3rem;font-weight:bold;color:#111827;margin-bottom:1rem}
+.section-subtitle{font-size:1.25rem;color:#4b5563;max-width:42rem;margin:0 auto}
+
+.services-section{padding:5rem 0;background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.service-card{background:#fff;padding:2rem;border-radius:1rem;border:1px solid #e5e7eb;transition:transform .3s,box-shadow .3s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px -8px rgba(37,99,235,.2)}
+.service-title{font-size:1.5rem;font-weight:bold;color:#111827;margin-bottom:.75rem}
+.service-description{color:#4b5563;line-height:1.625}
+
+.about-section{padding:5rem 0 0;background:#f0f0f0}
+.about-content{max-width:64rem;margin:0 auto}
+.about-card{padding:3rem 3rem 1rem}
+.about-text{font-size:1.125rem;color:#374151;line-height:1.625;margin-bottom:1.5rem}
+.about-text strong{color:#2563eb}
+
+.stat-track{position:relative;height:400vh}
+.stat-stage{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stat-card{position:absolute;left:0;right:0;top:50%;margin-top:-4.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem;opacity:0;will-change:transform,opacity;transform-origin:50% 50%}
+.stat-number{font-size:2.25rem;font-weight:bold;color:#2563eb;margin-bottom:.5rem;font-variant-numeric:tabular-nums}
+.stat-label{color:#374151}
+
+.faq-section{padding:5rem 0;background:#f9fafb}
+.faq-list{max-width:64rem;margin:0 auto;display:grid;gap:1rem}
+.faq-item{background:#fff;border:1px solid #e5e7eb;border-radius:1rem;padding:1.25rem 1.5rem}
+.faq-item summary{cursor:pointer;font-weight:600;color:#111827;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-answer{margin-top:.75rem;color:#4b5563;line-height:1.6}
+
+.contact-section{padding:5rem 0;background:#fff}
+.contact-content{max-width:64rem;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.contact-card{background:#f9fafb;padding:2rem;text-align:center}
+.contact-title{font-size:1.25rem;font-weight:bold;color:#111827;margin-bottom:.5rem}
+.contact-info{color:#4b5563;word-break:break-word}
+
+footer{background:#111827;color:#fff;padding:3rem 0}
+.footer-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo-text{font-size:1.5rem;font-weight:bold}
+.footer-text{text-align:right;color:#9ca3af}
+.footer-text p{margin-bottom:.5rem}
+
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
+@media (max-width:768px){
+  nav{display:none}
+  .mobile-menu-btn{display:block}
+  .section-title{font-size:2.25rem}
+  .footer-content{flex-direction:column;text-align:center}
+  .footer-text{text-align:center}
+  .hero-track{height:800vh}
+  .about-card{padding:1rem 0 1rem}
+  .stat-card{padding:.5rem}
+  .stat-number{font-size:1.5rem}
+  .stat-label{font-size:.8rem}
+}
+@media (max-width:700px){
+  .services-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Sajt je u izradi</h1>
-    <p>Hvala na strpljenju.</p>
-  </main>
+
+<header id="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo"><span class="logo-text">Sigma ing</span></div>
+      <nav>
+        <a href="#pocetna">Početna</a>
+        <a href="#usluge">Usluge</a>
+        <a href="#o-nama">O nama</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <button class="mobile-menu-btn" id="menuBtn" aria-label="Meni" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#pocetna" onclick="toggleMobileMenu()">Početna</a>
+      <a href="#usluge" onclick="toggleMobileMenu()">Usluge</a>
+      <a href="#o-nama" onclick="toggleMobileMenu()">O nama</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<section id="pocetna" class="hero-track">
+  <div class="hero-stage">
+    <div class="sentences" id="sentences">
+      <p class="sentence">Izrađujemo Akt o proceni rizika za sve firme.</p>
+      <p class="sentence">Vodimo kompletnu dokumentaciju za BZR.</p>
+      <p class="sentence">Vršimo procenu rizika.</p>
+      <p class="sentence">Sprovodimo obuke i edukaciju zaposlenih za bezbedan i zdrav rad.</p>
+      <p class="sentence">Kontrolišemo primenu mera za BZR.</p>
+      <p class="sentence">Sarađujemo sa Inspekcijom rada i redovno usklađujemo poslovanje sa Zakonom o bezbednosti i zdravlju na radu.</p>
+    </div>
+
+    <div class="window" id="win">
+      <h1 class="big-title" id="bigTitle" aria-label="Mi smo SIGMA ING">
+        <span class="line" data-text="Mi smo"></span>
+        <span class="line" data-text="SIGMA ING doo"></span>
+      </h1>
+    </div>
+  </div>
+</section>
+<section id="o-nama" class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <div class="section-header"><h2 class="section-title">O nama</h2></div>
+      <div class="about-card">
+        <p class="about-text">Bezbednost i zdravlje na radu predstavljaju jedan od osnovnih prioriteta poslovanja naše firme. Posvećeni smo stvaranju bezbednog i zdravog radnog okruženja, uz doslednu primenu važećih zakonskih propisa, standarda i mera zaštite na radu.</p>
+        <p class="about-text">Posebnu pažnju posvećujemo redovnoj obuci zaposlenih, pravilnoj upotrebi sredstava i opreme za ličnu zaštitu, kao i podizanju svesti o značaju bezbednog obavljanja radnih zadataka.</p>
+      </div>
+    </div>
+    <div class="stat-track" id="statTrack">
+      <div class="stat-stage" id="statStage">
+        <div class="stat-card" data-target="150" data-suffix="+"><div class="stat-number">150+</div><div class="stat-label">Firmi nam veruje</div></div>
+        <div class="stat-card" data-target="3500" data-suffix="+"><div class="stat-number">3500+</div><div class="stat-label">Obučenih radnika</div></div>
+        <div class="stat-card" data-target="15" data-suffix="+"><div class="stat-number">15+</div><div class="stat-label">Godina iskustva</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="usluge" class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Naše usluge</h2>
+      <p class="section-subtitle">Pružamo kompletna rešenja za bezbednost i zdravlje na radu</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><h3 class="service-title">Izrada Akta o proceni rizika</h3><p class="service-description">Izrađujemo Akt o proceni rizika na radnom mestu i u radnoj sredini u skladu sa važećim zakonom i pravilnicima.</p></div>
+      <div class="service-card"><h3 class="service-title">Obuka zaposlenih</h3><p class="service-description">Organizujemo i sprovodimo obuke zaposlenih za bezbedan i zdrav rad, prilagođene specifičnostima radnih mesta i poslovnih aktivnosti.</p></div>
+      <div class="service-card"><h3 class="service-title">Celokupna BZR dokumentacija</h3><p class="service-description">Izrada svih potrebnih pravnih akata i dokumentacije u skladu sa zakonskom regulativom.</p></div>
+      <div class="service-card"><h3 class="service-title">Savetovanje poslodavaca</h3><p class="service-description">Odgovaramo na pitanja o zakonskim obavezama, rokovima i odgovornostima i pomažemo da odluke donesete na vreme.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Česta pitanja</h2>
+      <p class="section-subtitle">Odgovori na najčešća pitanja o našim uslugama i radu</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Da li moja firma mora da ima Akt o proceni rizika?</summary><p class="faq-answer">Da. Obaveza svakog poslodavca, bez obzira na veličinu preduzeća, mora da ima urađen Akt o proceni rizika. Akt se piše za sva radna mesta i menja se kad se promeni posao, oprema ili način rada.</p></details>
+      <details class="faq-item"><summary>Koliko se često radnici obučavaju?</summary><p class="faq-answer">Pre nego što počnu da rade, kad se pređe na drugo radno mesto, kad stigne nova oprema ili se promeni način rada i periodično, u rokovima koje određuje Akt o proceni rizika.</p></details>
+
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Kontakt</h2>
+    </div>
+    <div class="contact-content">
+      <div class="contact-grid">
+        <div class="contact-card"><h3 class="contact-title">Telefon</h3><p class="contact-info">+381 64 23 79 402</p></div>
+        <div class="contact-card"><h3 class="contact-title">Email</h3><p class="contact-info">zivoradmaarkovic72@gmail.com</p></div>
+        <div class="contact-card"><h3 class="contact-title">Jovana Cvijića br. 39</h3><p class="contact-info">Loznica, Srbija</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="footer-logo-text">Sigma ing</span></div>
+      <div class="footer-text">
+        <p>&copy; 2026 Sigma ing. Sva prava zadržana.</p>
+        <p>Bezbednost i zdravlje na radu</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.getElementById('header');
+  var track = document.getElementById('pocetna');
+  var sentences = Array.prototype.slice.call(document.querySelectorAll('.sentence'));
+  var win = document.getElementById('win');
+  var N = sentences.length;
+
+  var statTrack = document.getElementById('statTrack');
+  var statCards = Array.prototype.slice.call(document.querySelectorAll('.stat-card'));
+
+  var letters = [];
+  document.querySelectorAll('#bigTitle .line').forEach(function (line) {
+    line.getAttribute('data-text').split(' ').forEach(function (w, wi) {
+      if (wi > 0) { var sp = document.createElement('span'); sp.className = 'sp'; line.appendChild(sp); }
+      var word = document.createElement('span'); word.className = 'word';
+      w.split('').forEach(function (c) {
+        var s = document.createElement('span'); s.className = 'ch'; s.textContent = c;
+        word.appendChild(s); letters.push(s);
+      });
+      line.appendChild(word);
+    });
+  });
+
+  function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
+  function ease(t) { return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  var SENT_END = 0.62;  
+  var ticking = false;
+
+  function updateStats() {
+    if (!statTrack) return;
+    var rect = statTrack.getBoundingClientRect();
+    var total = statTrack.offsetHeight - window.innerHeight;
+    var sp = clamp(-rect.top / total, 0, 1);
+    var S = window.innerWidth > 768 ? 4 : 3.2;
+    var travel = window.innerHeight / 2 + 220;
+
+    statCards.forEach(function (card, k) {
+      var u = (sp / 0.97 - k / 3) * 3;
+      if (u <= 0 || u >= 1) { card.style.opacity = 0; return; }
+
+      var fin = clamp(u / 0.08, 0, 1);
+      var count = easeOut(clamp(u / 0.5, 0, 1));         
+      var out = ease(clamp((u - 0.72) / 0.28, 0, 1));    
+
+      card.style.opacity = fin;
+      card.style.transform = 'translateY(' + (-travel * out) + 'px) scale(' + lerp(S, S * 0.85, out) + ')';
+
+      var target = parseInt(card.getAttribute('data-target'), 10);
+      var suffix = card.getAttribute('data-suffix') || '';
+      card.firstChild.textContent = Math.round(target * count) + suffix;
+    });
+  }
+
+  function update() {
+    ticking = false;
+    var y = window.scrollY;
+    header.classList.toggle('scrolled', y > 50);
+
+    var rect = track.getBoundingClientRect();
+    var total = track.offsetHeight - window.innerHeight;
+    var p = clamp(-rect.top / total, 0, 1);
+
+    var seg = SENT_END / N;
+    sentences.forEach(function (el, i) {
+      var t = (p - i * seg) / seg;
+      var op = 0, ty = 0;
+      if (t >= 0 && t <= 1) {
+        var fin = i === 0 ? 1 : clamp(t / 0.22, 0, 1);
+        var fout = clamp((1 - t) / 0.22, 0, 1);
+        op = Math.min(fin, fout);
+        ty = t < 0.5 ? (1 - fin) * 40 : -(1 - fout) * 40;
+      }
+      el.style.opacity = op;
+      el.style.transform = 'translateY(' + ty + 'px)';
+    });
+
+    var q = clamp((p - SENT_END + 0.03) / (1 - SENT_END - 0.03), 0, 1);
+    var open = ease(clamp(q / 0.55, 0, 1));
+    var inset = lerp(50, 0, open);
+    var r = lerp(28, 0, open);
+    win.style.visibility = q > 0 ? 'visible' : 'hidden';
+    win.style.clipPath = 'inset(' + inset + '% ' + inset + '% ' + inset + '% ' + inset + '% round ' + r + 'px)';
+
+    var n = letters.length;
+    letters.forEach(function (ch, k) {
+      var lp = clamp(q * 1.7 - (k / n) * 0.7, 0, 1);
+      var e = ease(lp);
+      ch.style.opacity = e;
+      ch.style.transform = 'scale(' + lerp(0.15, 1, e) + ')';
+    });
+
+    updateStats();
+  }
+
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+
+  window.toggleMobileMenu = function () {
+    document.getElementById('mobileNav').classList.toggle('active');
+    document.getElementById('menuBtn').classList.toggle('open');
+  };
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = this.getAttribute('href');
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      if (id === '#pocetna') window.scrollTo({ top: 0, behavior: 'smooth' });
+      else target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+})();
+</script>
 </body>
 </html>
